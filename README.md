@@ -20,3 +20,14 @@
 | `flutter doctor --android-licenses` | Accepter les licences Android SDK |
 | `flutter emulators` | Lister les émulateurs Android disponibles |
 | `flutter devices` | Lister les appareils/émulateurs connectés |
+## TP2 - Composants et widgets
+
+- Composant réutilisable ProfileCard créé dans les deux technos :
+  - React Native : profil-app-rn/src/components/ProfileCard.tsx
+  - Flutter : profil_app_flutter/lib/profile_card.dart
+- Champ téléphone facultatif (nullable en Dart, condition ternaire en TS)
+- Comparaison props (RN) vs constructeur (Flutter) : en React Native les
+  données passent par un objet props déstructuré, typé par TypeScript en
+  couche additionnelle ; en Flutter elles passent par le constructeur de
+  la classe, avec un typage natif au langage (erreur de compilation si
+  incorrect, pas seulement un avertissement).
