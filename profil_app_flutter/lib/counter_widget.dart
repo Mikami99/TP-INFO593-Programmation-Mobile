@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'theme.dart';
 
-class CounterWidget extends StatefulWidget {
-  const CounterWidget({super.key});
+class VisitCounter extends StatefulWidget {
+  const VisitCounter({super.key});
 
   @override
-  State<CounterWidget> createState() => _CounterWidgetState();
+  State<VisitCounter> createState() => _VisitCounterState();
 }
 
-class _CounterWidgetState extends State<CounterWidget> {
+class _VisitCounterState extends State<VisitCounter> {
   int _count = 0;
 
   void _increment() => setState(() => _count++);
@@ -18,16 +19,21 @@ class _CounterWidgetState extends State<CounterWidget> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        const Text(
+          'Visites',
+          style: TextStyle(fontSize: 14, color: AppTheme.textSecondary),
+        ),
+        const SizedBox(height: 4),
         Text(
           '$_count',
-          style: const TextStyle(fontSize: 32, color: Colors.white),
+          style: const TextStyle(fontSize: 32, color: AppTheme.textPrimary),
         ),
         if (_count >= 10)
           const Text(
             'Tu es un pro du clic !',
-            style: TextStyle(color: Color(0xFF38BDF8)),
+            style: TextStyle(color: AppTheme.accent),
           ),
-        const SizedBox(height: 12),
+        const SizedBox(height: AppTheme.spacingMd),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -35,7 +41,7 @@ class _CounterWidgetState extends State<CounterWidget> {
               onPressed: _increment,
               child: const Text('Incrémenter'),
             ),
-            const SizedBox(width: 12),
+            const SizedBox(width: AppTheme.spacingSm),
             ElevatedButton(
               onPressed: _count == 0 ? null : _reset,
               child: const Text('Réinitialiser'),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'theme.dart';
 
 class ProfileCard extends StatelessWidget {
   final String nom;
@@ -16,16 +17,16 @@ class ProfileCard extends StatelessWidget {
     required this.email,
   });
 
-  static const _lineStyle = TextStyle(fontSize: 16, color: Color(0xFFE2E8F0));
+  static const _lineStyle = TextStyle(fontSize: 16, color: AppTheme.textSecondary);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(24),
-      margin: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(AppTheme.spacingLg),
+      margin: const EdgeInsets.all(AppTheme.spacingMd),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
-        borderRadius: BorderRadius.circular(12),
+        color: AppTheme.card,
+        borderRadius: BorderRadius.circular(AppTheme.radius),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -36,10 +37,10 @@ class ProfileCard extends StatelessWidget {
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: AppTheme.textPrimary,
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: AppTheme.spacingMd),
           Text('$prenom $nom', style: _lineStyle),
           Text('$age ans', style: _lineStyle),
           if (telephone != null) Text(telephone!, style: _lineStyle),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'theme.dart';
 import 'profile_card.dart';
+import 'skills_list.dart';
 import 'counter_widget.dart';
 
 void main() => runApp(const MyApp());
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: const Color(0xFF0F172A),
+        backgroundColor: AppTheme.background,
         body: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -21,11 +23,14 @@ class MyApp extends StatelessWidget {
                 ProfileCard(
                   nom: 'RAJAONAH',
                   prenom: 'Mickaël',
-                  age: 25,
+                  age: 70,
                   telephone: null,
                   email: 'mikami@example.com',
                 ),
-                CounterWidget(),
+                SkillsList(
+                  competences: ['React Native', 'Flutter', 'TypeScript', 'Dart', 'Git'],
+                ),
+                VisitCounter(),
               ],
             ),
           ),

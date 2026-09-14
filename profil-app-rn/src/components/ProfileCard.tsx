@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
+import { theme } from './theme';
 
 type ProfileCardProps = {
   nom: string;
@@ -24,20 +25,20 @@ const styles = StyleSheet.create({
   card: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 24,
-    margin: 16,
-    borderRadius: 12,
-    backgroundColor: '#1e293b',
+    padding: theme.spacing.lg,
+    margin: theme.spacing.md,
+    borderRadius: theme.radius,
+    backgroundColor: theme.colors.card,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#ffffff',
-    marginBottom: 16,
+    color: theme.colors.textPrimary,
+    marginBottom: theme.spacing.md,
   },
   line: {
     fontSize: 16,
-    color: '#e2e8f0',
+    color: theme.colors.textSecondary,
     marginVertical: 4,
   },
 });
