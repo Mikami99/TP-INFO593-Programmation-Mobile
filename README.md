@@ -31,3 +31,14 @@
   couche additionnelle ; en Flutter elles passent par le constructeur de
   la classe, avec un typage natif au langage (erreur de compilation si
   incorrect, pas seulement un avertissement).
+## TP3 - État local
+
+- Compteur avec état local dans les deux technos :
+  - React Native : profil-app-rn/src/components/Counter.tsx
+  - Flutter : profil_app_flutter/lib/counter_widget.dart
+- Boutons Incrémenter / Réinitialiser (désactivé quand le compteur vaut 0)
+- Message "Tu es un pro du clic !" affiché à partir de 10 clics
+- useState (RN) vs setState (Flutter) : les deux servent à dire au
+  framework "une donnée a changé, redessine l'écran" ; useState est un
+  hook appelé dans un composant-fonction, setState est une méthode
+  appelée dans un composant-classe (State).
