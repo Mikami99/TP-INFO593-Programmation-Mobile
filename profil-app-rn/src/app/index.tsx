@@ -1,5 +1,5 @@
 import { SafeAreaView, StyleSheet } from 'react-native';
-import ProfileCard from '../components/ProfilCard';
+import ProfileCard from '../components/ProfileCard';
 
 export default function Index() {
   return (
